@@ -33,7 +33,7 @@ let
                     colnames_b = Table.ColumnNames(b), 
                     colnames_a_str = Text.TrimEnd(List.Accumulate(colnames_a, "", (acc, current) => acc & current & ", "), {" ", ","}),
                     colnames_b_str = Text.TrimEnd(List.Accumulate(colnames_b, "", (acc, current) => acc & current & ", "), {" ", ","}),
-                    return = "Column name test (ColName equality): " & (if (Table.ColumnNames(a) = Table.ColumnNames(b)) then "PASSED." else "FAILED.") & " Names of cols TABLE A= {" & colnames_a_str & "} TABLE B= {" & colnames_b_str & "}" 
+                    return = "Column name test (ColName equality): " & (if (colnames_a = colnames_b) then "PASSED." else "FAILED.") & " Names of cols TABLE A= {" & colnames_a_str & "} TABLE B= {" & colnames_b_str & "}" 
                 in
                     return,
 
